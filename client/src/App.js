@@ -4,16 +4,34 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import About from "./components/About/About";
 
-import { Routes,Route } from "react-router-dom";
+import { Routes,Route, useNavigate } from "react-router-dom";
+import useLocalStorige from "./hooks/useLocalStorige";
+import { useDispatch } from 'react-redux';
+import users from './users';
 
 function App() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [auth,setAuth] = useLocalStorige('auth',{});
+
+    const login = (authData) => {
+        setAuth(authData);
+        navigate('/')
+    };
+
+    const register = (authData) => {
+        users.push(authData);
+        login(JSON.stringify(authData));
+    };
+
     return (
         <div>
-            <Navbar />
+            <Navbar auth={auth}/>
                 <Routes>
                     <Route path='/' element={<HomePage />}/>
-                    <Route path='/user/register' element={<Register />}/>
-                    <Route path='/user/login' element={<Login />}/>
+                    <Route path='/user/register' element={<Register register={register}/>}/>
+                    <Route path='/user/login' element={<Login login={login}/>}/>
                     <Route path='/about' element={<About />}/>
                 </Routes>
         </div>

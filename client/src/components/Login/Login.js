@@ -1,8 +1,34 @@
 import styles from './Login.module.css';
+import users from '../../users';
 
-const Login = () => {
+const Login = ({login}) => {
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        const firstName = formData.get('fname');
+        const password = formData.get('password');
+
+        let authData = {
+            firstName,
+            password
+        };
+
+        for (const user of users) {
+            if (user.firstName === authData.firstName) {
+                if (user.password === authData.password) {
+                    authData.lastName = user.lastName;
+                    login(JSON.stringify(authData));
+                }
+            }
+        };
+
+    }
+
     return (
-        <form className={styles["form-container"]}>
+        <form onSubmit={onSubmit} className={styles["form-container"]}>
             <div className={styles.login}>
                 <label htmlFor="fname">First name:</label>
                 <br />
