@@ -1,0 +1,16 @@
+.container{
+    background-image: url('../../../public/images/AboutPageImage.jpg');
+    width: 1920px;
+    height: 969px;
+}
+
+.text-container{
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+    color: rgb(248, 195, 180);;
+    position: absolute;
+    top: 300px;
+    left: 360px;
+    font-family: cursive;
+    width: 1300px;
+}

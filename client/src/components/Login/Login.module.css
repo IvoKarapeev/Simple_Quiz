@@ -1,3 +1,8 @@
+body{
+    background-color:rgb(8,22,79);
+    margin:0;
+}
+
 .form-container{
     border: 4mm ridge rgba(50, 158, 220, 0.6);
     position: absolute;
