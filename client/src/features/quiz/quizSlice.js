@@ -3,20 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 export const quizSlice = createSlice({
     name:'quiz',
     initialState:{
-        'one':false,
-        'two':false,
-        'three':false,
-        'four':false,
-        'five':false,
-        'six':false,
-        'seven':false,
-        'eight':false,
-        'nine':false,
-        'ten':false
+        'score':0
     },
     reducers:{
         compliteQuestion: (state,action) => {
 
+            let res = state.score + 1;
+            let newScore = {'score':res};
+            return newScore;
         }
     }
     
