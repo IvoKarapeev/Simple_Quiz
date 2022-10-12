@@ -9,6 +9,8 @@ import useLocalStorige from "./hooks/useLocalStorige";
 import { useDispatch } from 'react-redux';
 import users from './users';
 import Logout from "./components/Logout/Logout";
+import QuizOne from "./components/Quiz/QuizOne";
+import WrongAnswer from "./components/WrongAnswer/WrongAnswer";
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
                     <Route path='/user/login' element={<Login login={login}/>}/>
                     <Route path='/user/logout' element={<Logout logoutHandler={logout}/>}/>
                     <Route path='/about' element={<About />}/>
+                    <Route path='/wrong' element={<WrongAnswer />}/>
+                    <Route path='/quiz/one' element={<QuizOne />}/>
                 </Routes>
         </div>
     )
