@@ -8,6 +8,7 @@ import { Routes,Route, useNavigate } from "react-router-dom";
 import useLocalStorige from "./hooks/useLocalStorige";
 import { useDispatch } from 'react-redux';
 import users from './users';
+import Logout from "./components/Logout/Logout";
 
 function App() {
 
@@ -17,12 +18,17 @@ function App() {
 
     const login = (authData) => {
         setAuth(authData);
-        navigate('/')
+        navigate('/');
     };
 
     const register = (authData) => {
         users.push(authData);
         login(JSON.stringify(authData));
+    };
+
+    const logout = () => {
+        setAuth("{}");
+        navigate('/');
     };
 
     return (
@@ -32,6 +38,7 @@ function App() {
                     <Route path='/' element={<HomePage />}/>
                     <Route path='/user/register' element={<Register register={register}/>}/>
                     <Route path='/user/login' element={<Login login={login}/>}/>
+                    <Route path='/user/logout' element={<Logout logoutHandler={logout}/>}/>
                     <Route path='/about' element={<About />}/>
                 </Routes>
         </div>
