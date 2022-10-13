@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { compliteQuestion } from "./features/quiz/quizSlice";
 import users from './users';
 import { QuizContext } from "./context/QuizContext";
+import QuizTwo from "./components/Quiz/QuizTwo";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [auth,setAuth] = useLocalStorige('auth',{});
+    const quiz = useSelector((state) => state.quiz);
 
     const login = (authData) => {
         setAuth(authData);
@@ -36,16 +38,23 @@ function App() {
         navigate('/');
     };
 
-    const correctAnswer = () => {
-        dispatch(compliteQuestion());
+    const correctAnswer = (question) => {
+        if (question === 1) {
+            dispatch(compliteQuestion());
+            navigate('/quiz/2');
+        }else{
+            let score = quiz.score;
+            if (score <= question - 1) {
+                dispatch(compliteQuestion());
+                navigate(`/quiz/${question+1}`);
+            }
+        }
     };
 
     const wrongAnswer = () => {
         navigate('/wrong');
     };
 
-    const quiz = useSelector((state) => state.quiz);
-    console.log(quiz); 
 
     return (
         <div>
@@ -58,7 +67,8 @@ function App() {
                         <Route path='/user/logout' element={<Logout logoutHandler={logout}/>}/>
                         <Route path='/about' element={<About />}/>
                         <Route path='/wrong' element={<WrongAnswer />}/>
-                        <Route path='/quiz/one' element={<QuizOne />}/>
+                        <Route path='/quiz/1' element={<QuizOne />}/>
+                        <Route path='/quiz/2' element={<QuizTwo />}/>
                     </Routes>
                 </QuizContext.Provider>
         </div>

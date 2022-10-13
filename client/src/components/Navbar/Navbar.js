@@ -18,7 +18,7 @@ const Navbar = ({auth}) => {
             <ul >
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>About</Link></li>
-                <li><Link to='/quiz/one'>Go To Quiz</Link></li>
+                <li><Link to='/quiz/1'>Go To Quiz</Link></li>
                 {user
                     ? <li><Link to='/user/logout'>Logout</Link></li>
                     : 

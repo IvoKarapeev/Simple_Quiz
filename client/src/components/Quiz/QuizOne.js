@@ -13,7 +13,7 @@ const QuizOne = () => {
             </div>
             <button className={styles['btn-one']} onClick={wrongAnswer}>Oil</button>
             <button className={styles['btn-two']} onClick={wrongAnswer}>Chocolate</button>
-            <button className={styles['btn-three']} onClick={correctAnswer}>Honey</button>
+            <button className={styles['btn-three']} onClick={() => correctAnswer(1)}>Honey</button>
             <button className={styles['btn-four']} onClick={wrongAnswer}>Strawberry jam</button>
         </div>
     )
