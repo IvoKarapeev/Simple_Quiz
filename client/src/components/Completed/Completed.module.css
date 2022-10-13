@@ -1,0 +1,30 @@
+.background{
+    background-image: url('../../../public/images/CompletedPage.jpg');
+    width: 1920px;
+    height: 969px;
+}
+
+.text{
+    color: rgb(102, 218, 128);
+    font-size: 37px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+    position: absolute;
+    top: 220px;
+    left: 60px;
+    width: 500px;
+}
+
+.btn-home{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 143px;
+    left: 1550px;
+    background-color: rgb(47,91,100);
+    border: none;
+    color: rgb(188, 3, 117);
+    font-size: 40px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+}

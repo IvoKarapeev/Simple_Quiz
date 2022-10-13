@@ -11,11 +11,14 @@ export const quizSlice = createSlice({
             let res = state.score + 1;
             let newScore = {'score':res};
             return newScore;
+        },
+        wrongQuestion: (state,action) => {
+            state.score = 0;
         }
     }
     
 });
 
-export const { compliteQuestion } = quizSlice.actions;
+export const { compliteQuestion,wrongQuestion } = quizSlice.actions;
 
 export default quizSlice.reducer;

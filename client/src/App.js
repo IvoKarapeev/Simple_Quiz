@@ -14,6 +14,16 @@ import { compliteQuestion } from "./features/quiz/quizSlice";
 import users from './users';
 import { QuizContext } from "./context/QuizContext";
 import QuizTwo from "./components/Quiz/QuizTwo";
+import QuizThree from "./components/Quiz/QuizThree";
+import QuizFour from "./components/Quiz/QuizFour";
+import QuizFive from "./components/Quiz/QuizFive";
+import QUizSix from "./components/Quiz/QuizSix";
+import QuizSeven from "./components/Quiz/QuizSeven";
+import QuizEight from "./components/Quiz/QuizEight";
+import QuizNine from "./components/Quiz/QuizNine";
+import QuizTen from "./components/Quiz/QuizTen";
+import Completed from "./components/Completed/Completed";
+import NotCompleted from "./components/NotCompleted/NotCompleted";
 
 
 function App() {
@@ -55,11 +65,26 @@ function App() {
         navigate('/wrong');
     };
 
+    const lastQuestion = () => {
+        let score = quiz.score;
+            if (score === 9) {
+                dispatch(compliteQuestion());
+                navigate(`/completed/quiz`);
+            }
+    };
+
+    const completedHandler = () => {
+        if (quiz.score === 10) {
+            return true
+        }else{
+            return false;
+        }
+    };
 
     return (
         <div>
             <Navbar auth={auth}/>
-                <QuizContext.Provider value={{correctAnswer,wrongAnswer}}>
+                <QuizContext.Provider value={{correctAnswer,wrongAnswer,lastQuestion}}>
                     <Routes>
                         <Route path='/' element={<HomePage />}/>
                         <Route path='/user/register' element={<Register register={register}/>}/>
@@ -69,6 +94,16 @@ function App() {
                         <Route path='/wrong' element={<WrongAnswer />}/>
                         <Route path='/quiz/1' element={<QuizOne />}/>
                         <Route path='/quiz/2' element={<QuizTwo />}/>
+                        <Route path='/quiz/3' element={<QuizThree />}/>
+                        <Route path='/quiz/4' element={<QuizFour />}/>
+                        <Route path='/quiz/5' element={<QuizFive />}/>
+                        <Route path='/quiz/6' element={<QUizSix />}/>
+                        <Route path='/quiz/7' element={<QuizSeven />}/>
+                        <Route path='/quiz/8' element={<QuizEight />}/>
+                        <Route path='/quiz/9' element={<QuizNine />}/>
+                        <Route path='/quiz/10' element={<QuizTen />}/>
+                        <Route path='/completed/quiz' element={<Completed completedHandler={completedHandler}/>}/>
+                        <Route path='/not/completed' element={<NotCompleted />}/>
                     </Routes>
                 </QuizContext.Provider>
         </div>
