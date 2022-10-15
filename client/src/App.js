@@ -7,6 +7,8 @@ import Logout from "./components/Logout/Logout";
 import QuizOne from "./components/Quiz/QuizOne";
 import WrongAnswer from "./components/WrongAnswer/WrongAnswer";
 
+import bcrypt from 'bcryptjs';
+
 import { Routes,Route, useNavigate } from "react-router-dom";
 import useLocalStorige from "./hooks/useLocalStorige";
 import { useDispatch, useSelector } from 'react-redux';
