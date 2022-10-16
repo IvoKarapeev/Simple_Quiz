@@ -6,14 +6,12 @@ import About from "./components/About/About";
 import Logout from "./components/Logout/Logout";
 import QuizOne from "./components/Quiz/QuizOne";
 import WrongAnswer from "./components/WrongAnswer/WrongAnswer";
-
 import bcrypt from 'bcryptjs';
-
 import { Routes,Route, useNavigate } from "react-router-dom";
 import useLocalStorige from "./hooks/useLocalStorige";
 import { useDispatch, useSelector } from 'react-redux';
 import { compliteQuestion } from "./features/quiz/quizSlice";
-import users from './users';
+import { users,salt } from './users';
 import { QuizContext } from "./context/QuizContext";
 import QuizTwo from "./components/Quiz/QuizTwo";
 import QuizThree from "./components/Quiz/QuizThree";
@@ -40,9 +38,16 @@ function App() {
         navigate('/');
     };
 
-    const register = (authData) => {
-        users.push(authData);
-        login(JSON.stringify(authData));
+    const register = async (authData) => {
+        
+        const userData = {
+            firstName: authData.firstName,
+            lastName: authData.lastName,
+            password: bcrypt.hashSync(authData.password,salt)
+        };
+
+        users.push(userData);
+        login(JSON.stringify(userData));
     };
 
     const logout = () => {

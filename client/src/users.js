@@ -1,3 +1,5 @@
-const users = [];
+import bcrypt from 'bcryptjs';
 
-export default users;
+export const users = [];
+
+export const salt = bcrypt.genSaltSync(10);

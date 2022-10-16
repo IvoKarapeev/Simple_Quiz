@@ -1,5 +1,6 @@
 import styles from './Login.module.css';
-import users from '../../users';
+import { users,salt } from '../../users';
+import bcrypt from 'bcryptjs';
 
 const Login = ({login}) => {
 
@@ -18,7 +19,8 @@ const Login = ({login}) => {
 
         for (const user of users) {
             if (user.firstName === authData.firstName) {
-                if (user.password === authData.password) {
+                const hashedPassword = bcrypt.hashSync(authData.password,salt);
+                if (hashedPassword === user.password) {
                     authData.lastName = user.lastName;
                     login(JSON.stringify(authData));
                 }
