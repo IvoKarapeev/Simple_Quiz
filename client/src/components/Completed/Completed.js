@@ -25,7 +25,7 @@ const Completed = ({completedHandler}) => {
             it’s called “scattering”. Are you ready for the next level? 
             </div>
 
-            <button className={styles["btn-next"]}><Link to='/second/quiz/1'>Next Level</Link></button>
+            <button className={styles["btn-next"]}><Link to='/quiz/11'>Next Level</Link></button>
         </div>
 )
 
