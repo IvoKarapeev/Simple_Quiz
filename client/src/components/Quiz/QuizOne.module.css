@@ -12,6 +12,8 @@
     position: absolute;
     top: 350px;
     left: 350px;
+    width: 1300px;
+    text-align: center;
 }
 
 .btn-one{

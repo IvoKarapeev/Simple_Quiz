@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({auth,quiz}) => {
 
-    console.log(quiz);
-
     let user;
 
     if (typeof auth === 'string') {
@@ -20,7 +18,7 @@ const Navbar = ({auth,quiz}) => {
             <ul >
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>About</Link></li>
-                <li><Link to='/quiz/1'>Go To Quiz</Link></li>
+                <li><Link to={`/quiz/${quiz.score+1}`}>Go To Quiz</Link></li>
                 {user
                     ? <li><Link to='/user/logout'>Logout</Link></li>
                     : 
