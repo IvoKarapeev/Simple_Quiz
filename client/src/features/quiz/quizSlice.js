@@ -13,6 +13,7 @@ export const quizSlice = createSlice({
         },
         wrongQuestion: (state,action) => {
             state.score = 0;
+            state.level = 1;
         },
         levelUp: (state,action) => {
             state.level += 1;

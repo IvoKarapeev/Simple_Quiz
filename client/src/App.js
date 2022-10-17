@@ -24,6 +24,7 @@ import QuizNine from "./components/Quiz/QuizNine";
 import QuizTen from "./components/Quiz/QuizTen";
 import Completed from "./components/Completed/Completed";
 import NotCompleted from "./components/NotCompleted/NotCompleted";
+import QuestionOne from "./components/QuizSecond/QuizOne";
 
 
 function App() {
@@ -110,8 +111,9 @@ function App() {
                         <Route path='/quiz/8' element={<QuizEight />}/>
                         <Route path='/quiz/9' element={<QuizNine />}/>
                         <Route path='/quiz/10' element={<QuizTen />}/>
-                        <Route path='/completed/quiz' element={<Completed completedHandler={completedHandler}/>}/>
-                        <Route path='/not/completed/one' element={<NotCompleted />}/>
+                        <Route path='/completed/quiz/one' element={<Completed completedHandler={completedHandler}/>}/>
+                        <Route path='/not/completed' element={<NotCompleted />}/>
+                        <Route path='/second/quiz/1' element={<QuestionOne completedHandler={completedHandler}/>}/>
                     </Routes>
                 </QuizContext.Provider>
         </div>

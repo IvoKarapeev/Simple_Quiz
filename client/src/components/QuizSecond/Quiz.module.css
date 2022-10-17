@@ -1,0 +1,51 @@
+.background{
+    background-image: url('../../../public/images/SecondQuizPage.png');
+    width: 1920px;
+    height: 969px;
+}
+
+.question{
+    color: rgb(239, 109, 34);
+    font-size: 50px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+    position: absolute;
+    top: 330px;
+    left: 550px;
+    width: 900px;
+}
+
+.answer-one{
+    width: 740px;
+    height: 200px;
+    position: absolute;
+    top: 720px;
+    left: 170px;
+    background-color: rgb(224, 144, 98);
+    color: rgb(188, 3, 117);
+    font-size: 30px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+}
+
+
+.answer-two{
+    width: 740px;
+    height: 200px;
+    position: absolute;
+    top: 720px;
+    left: 1050px;
+    background-color: rgb(224, 144, 98);
+    color: rgb(188, 3, 117);
+    font-size: 30px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+}
+
+.answer-one:hover{
+    background-color: rgb(231, 112, 44);
+}
+
+.answer-two:hover{
+    background-color: rgb(231, 112, 44);
+}
