@@ -1,7 +1,9 @@
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({auth}) => {
+const Navbar = ({auth,quiz}) => {
+
+    console.log(quiz);
 
     let user;
 
@@ -27,6 +29,8 @@ const Navbar = ({auth}) => {
                         <li><Link to='/user/login'>Login</Link></li>
                     </>}
             </ul>
+            <div className={styles.score}>Score:{quiz.score}</div>
+            <div className={styles.level}>Level:{quiz.level}</div>
         </nav>
     )
 };

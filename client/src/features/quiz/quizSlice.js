@@ -3,22 +3,24 @@ import { createSlice } from '@reduxjs/toolkit';
 export const quizSlice = createSlice({
     name:'quiz',
     initialState:{
-        'score':0
+        'score':0,
+        'level':1
     },
     reducers:{
         compliteQuestion: (state,action) => {
 
-            let res = state.score + 1;
-            let newScore = {'score':res};
-            return newScore;
+            state.score += 1;
         },
         wrongQuestion: (state,action) => {
             state.score = 0;
+        },
+        levelUp: (state,action) => {
+            state.level += 1;
         }
     }
     
 });
 
-export const { compliteQuestion,wrongQuestion } = quizSlice.actions;
+export const { compliteQuestion,wrongQuestion,levelUp } = quizSlice.actions;
 
 export default quizSlice.reducer;

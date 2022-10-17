@@ -19,6 +19,26 @@
     text-decoration: none;
     color: white;
 }
+
 .navbar li a:hover{
     color: red
+}
+
+.score{
+    color: white;
+    position: absolute;
+    top: 12px;
+    left: 1450px;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+
+.level{
+    color: white;
+    position: absolute;
+    top: 12px;
+    left: 1580px;
+    font-size: 20px;
+    font-family: cursive;
 }

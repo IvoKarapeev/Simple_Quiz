@@ -10,12 +10,12 @@
     font-family: cursive;
     text-shadow: 2px 2px black;
     position: absolute;
-    top: 220px;
+    top: 170px;
     left: 60px;
     width: 500px;
 }
 
-.btn-home{
+.btn-next{
     width: 250px;
     height: 100px;
     position: absolute;

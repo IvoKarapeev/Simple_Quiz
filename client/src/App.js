@@ -10,7 +10,7 @@ import bcrypt from 'bcryptjs';
 import { Routes,Route, useNavigate } from "react-router-dom";
 import useLocalStorige from "./hooks/useLocalStorige";
 import { useDispatch, useSelector } from 'react-redux';
-import { compliteQuestion } from "./features/quiz/quizSlice";
+import { compliteQuestion,levelUp } from "./features/quiz/quizSlice";
 import { users,salt } from './users';
 import { QuizContext } from "./context/QuizContext";
 import QuizTwo from "./components/Quiz/QuizTwo";
@@ -76,13 +76,14 @@ function App() {
         let score = quiz.score;
             if (score === 9) {
                 dispatch(compliteQuestion());
-                navigate(`/completed/quiz`);
+                navigate(`/completed/quiz/one`);
+                dispatch(levelUp());
             }
     };
 
     const completedHandler = () => {
         if (quiz.score === 10) {
-            return true
+            return true;
         }else{
             return false;
         }
@@ -90,7 +91,7 @@ function App() {
 
     return (
         <div>
-            <Navbar auth={auth}/>
+            <Navbar auth={auth} quiz={quiz}/>
                 <QuizContext.Provider value={{correctAnswer,wrongAnswer,lastQuestion}}>
                     <Routes>
                         <Route path='/' element={<HomePage />}/>
@@ -110,7 +111,7 @@ function App() {
                         <Route path='/quiz/9' element={<QuizNine />}/>
                         <Route path='/quiz/10' element={<QuizTen />}/>
                         <Route path='/completed/quiz' element={<Completed completedHandler={completedHandler}/>}/>
-                        <Route path='/not/completed' element={<NotCompleted />}/>
+                        <Route path='/not/completed/one' element={<NotCompleted />}/>
                     </Routes>
                 </QuizContext.Provider>
         </div>
