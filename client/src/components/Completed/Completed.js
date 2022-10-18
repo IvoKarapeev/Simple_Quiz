@@ -1,20 +1,8 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import styles from './Completed.module.css';
 
-const Completed = ({completedHandler}) => {
-
-    const navigate = useNavigate();
-    const completed = completedHandler();
- 
-
-    useEffect(() => {
-        if (completed === false) {
-            navigate('/not/completed');
-        }
-    },[]);
+const Completed = () => {
 
     return(
         <div className={styles.background}>

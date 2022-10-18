@@ -11,9 +11,9 @@ const QuizThree = () => {
             <div className={styles['question-one']}>
                 How long does it take for a pineapple to grow?
             </div>
-            <button className={styles['btn-one']} onClick={wrongAnswer}>1 month</button>
-            <button className={styles['btn-two']} onClick={wrongAnswer}>1 year and a half</button>
-            <button className={styles['btn-three']} onClick={wrongAnswer}>6 months</button>
+            <button className={styles['btn-one']} onClick={() => wrongAnswer(3)}>1 month</button>
+            <button className={styles['btn-two']} onClick={() => wrongAnswer(3)}>1 year and a half</button>
+            <button className={styles['btn-three']} onClick={() => wrongAnswer(3)}>6 months</button>
             <button className={styles['btn-four']} onClick={() => correctAnswer(3)}>2 years</button>
         </div>
     )

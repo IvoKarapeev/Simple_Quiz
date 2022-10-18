@@ -11,10 +11,10 @@ const QuizSeven = () => {
             <div className={styles['question-one']}>
                 The green computer code that is featured in the movie The Matrix at the beginning of the movie is actually a scan of:?
             </div>
-            <button className={styles['btn-one']} onClick={wrongAnswer}>Chapters from the Koran</button>
-            <button className={styles['btn-two']} onClick={wrongAnswer}>Fines for speeding</button>
+            <button className={styles['btn-one']} onClick={() => wrongAnswer(7)}>Chapters from the Koran</button>
+            <button className={styles['btn-two']} onClick={() => wrongAnswer(7)}>Fines for speeding</button>
             <button className={styles['btn-three']} onClick={() => correctAnswer(7)}>Sushi recipes</button>
-            <button className={styles['btn-four']} onClick={wrongAnswer}>Washing machine instructions</button>
+            <button className={styles['btn-four']} onClick={() => wrongAnswer(7)}>Washing machine instructions</button>
         </div>
     )
 };

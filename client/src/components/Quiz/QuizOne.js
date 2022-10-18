@@ -11,10 +11,10 @@ const QuizOne = () => {
             <div className={styles['question-one']}>
                 This is the only food that doesn't spoil. What is this?
             </div>
-            <button className={styles['btn-one']} onClick={wrongAnswer}>Oil</button>
-            <button className={styles['btn-two']} onClick={wrongAnswer}>Chocolate</button>
+            <button className={styles['btn-one']} onClick={() => wrongAnswer(1)}>Oil</button>
+            <button className={styles['btn-two']} onClick={() => wrongAnswer(1)}>Chocolate</button>
             <button className={styles['btn-three']} onClick={() => correctAnswer(1)}>Honey</button>
-            <button className={styles['btn-four']} onClick={wrongAnswer}>Strawberry jam</button>
+            <button className={styles['btn-four']} onClick={() => wrongAnswer(1)}>Strawberry jam</button>
         </div>
     )
 };

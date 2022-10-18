@@ -1,0 +1,49 @@
+.background{
+    background-image: url('../../../public/images/CompletedAllPage.png');
+    width: 1920px;
+    height: 969px;
+}
+
+.congrats{
+    color: rgb(255, 187, 151);
+    text-shadow: 3px 3px rgb(97, 0, 60);
+    text-align: center;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 900px;
+    font-family: cursive;
+    font-size: 35px;
+}
+
+.btn-back{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 800px;
+    left: 1600px;
+    background-color: rgb(174, 114, 68);
+    border: none;
+    color: rgb(188, 3, 117);
+    font-size: 40px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+}
+
+.btn-back:hover{
+    background-color: rgb(237, 105, 4);
+}
+
+.btn-try-again{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 800px;
+    left: 1300px;
+    background-color: rgb(174, 114, 68);
+    border: none;
+    color: rgb(188, 3, 117);
+    font-size: 40px;
+    font-family: cursive;
+    text-shadow: 2px 2px black;
+}
